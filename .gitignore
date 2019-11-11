@@ -1,0 +1,9 @@
+Temp/
+Obj/
+UnityGenerated/
+Library/
+Logs/
+Assets/AssetStoreTools*
+Assets/StreamingAssets*
+Data/
+.vs/ 
