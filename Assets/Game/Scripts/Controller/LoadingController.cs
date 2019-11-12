@@ -48,14 +48,17 @@ public class LoadingController : MonoBehaviour
     // Login-popup's Methods
     public void InputNameChange(string input)
     {
-        if (input != null && input.Equals(""))
+        // only enable login button when input is not empty
+        if (input != null && !input.Equals(""))
             btnLogin.interactable = true;
         else
             btnLogin.interactable = false;
     }
     public void Login()
     {
+        // Create player and store data
         PlayerData.Instance.player = new Player(inputName.text,1,0);
+        PlayerPrefs.GetInt(Const.IS_LOGIN, 1);
         PlayerData.Instance.SavePlayerData();
         loginPopup.SetActive(false);
         tvLoading.text = "LOADING ...";
@@ -68,7 +71,7 @@ public class LoadingController : MonoBehaviour
     private void PrepareData()
     {
         // Refer to player's level
-
+        DataManager.Instance.ReadQuestionFromFileData(PlayerData.Instance.player.level);
     }
     #endregion
 }

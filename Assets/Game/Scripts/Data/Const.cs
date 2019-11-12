@@ -7,4 +7,7 @@ public class Const : MonoBehaviour
     // KEYS
     public static string IS_LOGIN = "IsLogin";
     public static string USER_DATA = "User";
+
+    // PATHS
+    public static string DATA_FILE = "Data/pack_";
 }
