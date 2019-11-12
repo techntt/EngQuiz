@@ -5,7 +5,6 @@ Library/
 Logs/
 Assets/AssetStoreTools*
 Assets/StreamingAssets*
-Data/
 .vs/
 Assembly-CSharp.csproj
 EngQuiz.sln
