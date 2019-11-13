@@ -18,9 +18,9 @@ public class LoadingController : MonoBehaviour
     #endregion
 
     #region Unity Methods
-    private void Awake()
+    private void OnEnable()
     {
-        tvLoading.text = ".";
+        tvLoading.text = "";
         bool isLogin = PlayerPrefs.GetInt(Const.IS_LOGIN, 0) ==1;
         if (isLogin)
         {
@@ -60,7 +60,6 @@ public class LoadingController : MonoBehaviour
         PlayerPrefs.SetInt(Const.IS_LOGIN, 1);
         PlayerData.Instance.SavePlayerData();
         loginPopup.SetActive(false);
-        tvLoading.text = "LOADING ...";
         // prepare data
         PrepareData();
     }
@@ -69,8 +68,17 @@ public class LoadingController : MonoBehaviour
     #region Private Methods
     private void PrepareData()
     {
+        tvLoading.enabled = true;
+        tvLoading.text = "LOADING ...";
         // Refer to player's level
         DataManager.Instance.ReadQuestionFromFileData(PlayerData.Instance.player.level);
+        Invoke("GotoMenu", 2);
+    }
+
+    private void GotoMenu()
+    {
+        // Show Menu UI
+        GameManager.Instance.ChangePhase(GAME_PHASE.MENU);
     }
     #endregion
 }

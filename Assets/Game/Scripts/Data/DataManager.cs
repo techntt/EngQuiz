@@ -36,6 +36,8 @@ public class Data
     public Question GetQuestionById(int id)
     {
         Question question = null;
+        if (questDict.ContainsKey(id))
+            return questDict[id];
         return question;
     }
 }

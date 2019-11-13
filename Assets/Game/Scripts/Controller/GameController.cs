@@ -4,15 +4,30 @@ using UnityEngine;
 
 public class GameController : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    #region Inspector Variables
+    #endregion
 
-    // Update is called once per frame
-    void Update()
+    #region Member Variables
+    #endregion
+
+    #region Unity Methods
+    private void OnEnable()
     {
         
     }
+    private void OnDisable()
+    {
+        
+    }
+    #endregion
+
+    #region Public Methods
+    public void BackToMenu()
+    {
+        GameManager.Instance.ChangePhase(GAME_PHASE.MENU);
+    }
+    #endregion
+
+    #region Private Methods
+    #endregion
 }
