@@ -33,8 +33,7 @@ public class LoadingController : MonoBehaviour
                 // prepare data
                 PrepareData();
                 return;
-            }
-            
+            }            
         }
         
         // show login popup
@@ -58,7 +57,7 @@ public class LoadingController : MonoBehaviour
     {
         // Create player and store data
         PlayerData.Instance.player = new Player(inputName.text,1,0);
-        PlayerPrefs.GetInt(Const.IS_LOGIN, 1);
+        PlayerPrefs.SetInt(Const.IS_LOGIN, 1);
         PlayerData.Instance.SavePlayerData();
         loginPopup.SetActive(false);
         tvLoading.text = "LOADING ...";
