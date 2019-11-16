@@ -1,14 +1,14 @@
 {
 "quest":[
-{"id": 0,"type": 0,"question": "Nghia cua tu HELLO","answers": [{"id":"A","content":"Tam biet","id":"B","content":"Xin chao","id":"C","content":"Qua tao","id":"D","content":"Ngu ngon"}],"correct":"B"},
-{"id": 1,"type": 0,"question": "Nghia cua tu HELLO","answers": [{"id":"A","content":"Tam biet","id":"B","content":"Xin chao","id":"C","content":"Qua tao","id":"D","content":"Ngu ngon"}],"correct":"B"},
-{"id": 2,"type": 0,"question": "Nghia cua tu HELLO","answers": [{"id":"A","content":"Tam biet","id":"B","content":"Xin chao","id":"C","content":"Qua tao","id":"D","content":"Ngu ngon"}],"correct":"B"},
-{"id": 3,"type": 0,"question": "Nghia cua tu HELLO","answers": [{"id":"A","content":"Tam biet","id":"B","content":"Xin chao","id":"C","content":"Qua tao","id":"D","content":"Ngu ngon"}],"correct":"B"},
-{"id": 4,"type": 0,"question": "Nghia cua tu HELLO","answers": [{"id":"A","content":"Tam biet","id":"B","content":"Xin chao","id":"C","content":"Qua tao","id":"D","content":"Ngu ngon"}],"correct":"B"},
-{"id": 5,"type": 0,"question": "Nghia cua tu HELLO","answers": [{"id":"A","content":"Tam biet","id":"B","content":"Xin chao","id":"C","content":"Qua tao","id":"D","content":"Ngu ngon"}],"correct":"B"},
-{"id": 6,"type": 0,"question": "Nghia cua tu HELLO","answers": [{"id":"A","content":"Tam biet","id":"B","content":"Xin chao","id":"C","content":"Qua tao","id":"D","content":"Ngu ngon"}],"correct":"B"},
-{"id": 7,"type": 0,"question": "Nghia cua tu HELLO","answers": [{"id":"A","content":"Tam biet","id":"B","content":"Xin chao","id":"C","content":"Qua tao","id":"D","content":"Ngu ngon"}],"correct":"B"},
-{"id": 8,"type": 0,"question": "Nghia cua tu HELLO","answers": [{"id":"A","content":"Tam biet","id":"B","content":"Xin chao","id":"C","content":"Qua tao","id":"D","content":"Ngu ngon"}],"correct":"B"},
-{"id": 0,"type": 0,"question": "Nghia cua tu HELLO","answers": [{"id":"A","content":"Tam biet","id":"B","content":"Xin chao","id":"C","content":"Qua tao","id":"D","content":"Ngu ngon"}],"correct":"B"}
+{"id": 0,"type": 0,"question": "Câu hỏi 1","answers": [{"id":"A","content":"Tam biet"},{"id":"B","content":"Xin chao"},{"id":"C","content":"Qua tao"},{"id":"D","content":"Ngu ngon"}],"correct":"B"},
+{"id": 1,"type": 0,"question": "Câu hỏi 2","answers": [{"id":"A","content":"Tam biet"},{"id":"B","content":"Xin chao"},{"id":"C","content":"Qua tao"},{"id":"D","content":"Ngu ngon"}],"correct":"B"},
+{"id": 2,"type": 0,"question": "Câu hỏi 3","answers": [{"id":"A","content":"Tam biet"},{"id":"B","content":"Xin chao"},{"id":"C","content":"Qua tao"},{"id":"D","content":"Ngu ngon"}],"correct":"B"},
+{"id": 3,"type": 0,"question": "Câu hỏi 4","answers": [{"id":"A","content":"Tam biet"},{"id":"B","content":"Xin chao"},{"id":"C","content":"Qua tao"},{"id":"D","content":"Ngu ngon"}],"correct":"B"},
+{"id": 4,"type": 0,"question": "Câu hỏi 5","answers": [{"id":"A","content":"Tam biet"},{"id":"B","content":"Xin chao"},{"id":"C","content":"Qua tao"},{"id":"D","content":"Ngu ngon"}],"correct":"B"},
+{"id": 5,"type": 0,"question": "Câu hỏi 6","answers": [{"id":"A","content":"Tam biet"},{"id":"B","content":"Xin chao"},{"id":"C","content":"Qua tao"},{"id":"D","content":"Ngu ngon"}],"correct":"B"},
+{"id": 6,"type": 0,"question": "Câu hỏi 7","answers": [{"id":"A","content":"Tam biet"},{"id":"B","content":"Xin chao"},{"id":"C","content":"Qua tao"},{"id":"D","content":"Ngu ngon"}],"correct":"B"},
+{"id": 7,"type": 0,"question": "Câu hỏi 8","answers": [{"id":"A","content":"Tam biet"},{"id":"B","content":"Xin chao"},{"id":"C","content":"Qua tao"},{"id":"D","content":"Ngu ngon"}],"correct":"B"},
+{"id": 8,"type": 0,"question": "Câu hỏi 9","answers": [{"id":"A","content":"Tam biet"},{"id":"B","content":"Xin chao"},{"id":"C","content":"Qua tao"},{"id":"D","content":"Ngu ngon"}],"correct":"B"},
+{"id": 9,"type": 0,"question": "Câu hỏi 10","answers": [{"id":"A","content":"Tam biet"},{"id":"B","content":"Xin chao"},{"id":"C","content":"Qua tao"},{"id":"D","content":"Ngu ngon"}],"correct":"B"}
 ]
 }

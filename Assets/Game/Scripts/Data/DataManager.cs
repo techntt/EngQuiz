@@ -21,6 +21,7 @@ public class DataManager : SingletonMonoBehaviour<DataManager>
 
 public class Data
 {
+    
     public Question[] quest { get; set; }
 
     private Dictionary<int, Question> questDict;
@@ -28,10 +29,13 @@ public class Data
     {
         questDict = new Dictionary<int, Question>();
         foreach (Question q in quest)
+        {
             if (questDict.ContainsKey(q.id))
                 questDict[q.id] = q;
             else
                 questDict.Add(q.id, q);
+        }
+            
     }
     public Question GetQuestionById(int id)
     {
@@ -46,7 +50,7 @@ public class Question
     public int id { get; set; }
     public int type { get; set; }
     public string question { get; set; }
-    public Answer[] answers { get; set; }
+    public Answer[] answers  { get; set; }
     public string correct { get; set; }
 }
 

@@ -3,25 +3,30 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class GameController : MonoBehaviour
+public class GameController : SingletonMonoBehaviour<GameController>
 {
     #region Inspector Variables
     public GameObject countdownPnl;
     public Text tvCountDown,tvCurrent,tvMax,tvScore,tvTime;
-    public Text tvQuestion;
     public Slider timeProgress;
     public Image fillImg;
+    #endregion
+
+    #region Events
+    public delegate void SimpleEvent();
+    public event SimpleEvent EvtTimeOut;
     #endregion
 
     #region Member Variables
     int countdown = 5;
     int questionTime = 0;
-    int maxQuestionTime = 15;
+    int maxQuestionTime = 10;
     int currentQuest = 0;
     int maxQuest;
     int totalTime = 0;
     int score;
     Queue<Question> listQuest;
+    bool isPlaying;
     #endregion
 
     #region Unity Methods
@@ -32,8 +37,9 @@ public class GameController : MonoBehaviour
         listQuest = new Queue<Question>();
         for(int i = 0; i < 10; i++)
         {
-            listQuest.Enqueue(DataManager.Instance.data.GetQuestionById(0));
+            listQuest.Enqueue(DataManager.Instance.data.GetQuestionById(i));
         }
+        isPlaying = false;
         // Countdown Game
         CountdownTask();
     }
@@ -46,7 +52,11 @@ public class GameController : MonoBehaviour
     #region Public Methods
     public void BackToMenu()
     {
-        GameManager.Instance.ChangePhase(GAME_PHASE.MENU);
+        if (!isPlaying)
+            GameManager.Instance.ChangePhase(GAME_PHASE.MENU);
+        else
+            EndGame();
+
     }
     #endregion
 
@@ -57,11 +67,16 @@ public class GameController : MonoBehaviour
         tvMax.text = listQuest.Count.ToString();
         tvScore.text = score.ToString();
         currentQuest = 1;
+        isPlaying = true;
         DisplayQuestion();
     }
     private void EndGame()
     {
         CancelInvoke("AddTime");
+        if (EvtTimeOut != null)
+            EvtTimeOut();
+        // Show end game popup
+
     }
 
     private void DisplayQuestion()
@@ -74,8 +89,7 @@ public class GameController : MonoBehaviour
             
         Question quest = listQuest.Dequeue();
         tvCurrent.text = currentQuest.ToString();
-        tvQuestion.text = quest.question;
-
+        OneInFourPopup.Instance.DisplayQuestion(quest,null,null);
         questionTime = maxQuestionTime;
         ChangeTime();
         InvokeRepeating("AddTime", 1, 1);
@@ -84,10 +98,13 @@ public class GameController : MonoBehaviour
     private void CountdownTask()
     {
         tvCountDown.gameObject.SetActive(false);
-        tvCountDown.text = countdown.ToString();
+        if(countdown>0)
+            tvCountDown.text = countdown.ToString();
+        else
+            tvCountDown.text = "START";
         tvCountDown.gameObject.SetActive(true);
         countdown--;
-        if (countdown >= 0)
+        if (countdown >= -1)
             Invoke("CountdownTask", 1);
         else
         {
@@ -107,9 +124,11 @@ public class GameController : MonoBehaviour
         }
         else
         {
+            if (EvtTimeOut != null)
+                EvtTimeOut();
             CancelInvoke("AddTime");
             currentQuest++;
-            DisplayQuestion();
+            Invoke("DisplayQuestion",1);
         }
     }
     private void ChangeTime()
